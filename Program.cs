@@ -46,11 +46,28 @@ namespace Binary_Search_Tree
                         parent.lchild = tmp;
                     }
                 }
+                else
+                {
+                    parent.rchild = tmp;
+                }
             }
         }
         public void Find(string element, ref Node parent, ref Node currentnode)
         {
-
+            currentnode = ROOT;
+            parent = null;
+            while ((currentnode != null) && (currentnode.info != element))
+            {
+                parent = currentnode;
+                if (string.Compare(element, currentnode.info) < 0)
+                {
+                    currentnode = currentnode.lchild;
+                }
+                else
+                {
+                    currentnode = currentnode.rchild;
+                }
+            }
         }
     }
     internal class Program
