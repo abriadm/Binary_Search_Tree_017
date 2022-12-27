@@ -5,9 +5,20 @@
         public string info;
         public Node lchild;
         public Node rchild;
-        public Node()
+        public Node(string i, Node l, Node r)
         {
+            info = i;
+            lchild = l;
+            rchild = r;
+        }
+    }
 
+    class BinaryTree
+    {
+        public Node ROOT;
+        public BinaryTree()
+        {
+            ROOT = null;
         }
     }
     internal class Program
