@@ -112,11 +112,45 @@ namespace Binary_Search_Tree
             }
         }
     }
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            BinaryTree x = new BinaryTree();
+            while (true)
+            {
+                Console.WriteLine("\nMenu");
+                Console.WriteLine("1. Insert operation");
+                Console.WriteLine("2. Inorder traversal");
+                Console.WriteLine("3. Preorder traversal");
+                Console.WriteLine("4. Postorder traversal");
+                Console.WriteLine("5. exit\n");
+                Console.WriteLine("Enter your choice (1-5): ");
+                char ch = Convert.ToChar(Console.ReadLine());
+                switch (ch)
+                {
+                    case '1':
+                        Console.WriteLine("Enter a word: ");
+                        string word = Console.ReadLine();
+                        x.Insert(word);
+                        break;
+                    case '2':
+                        x.Inorder(x.ROOT)
+                        break;
+                    case '3':
+                        x.Preorder(x.ROOT);
+                        break;
+                    case '4':
+                        x.Posteorder(x.ROOT);
+                        break;
+                    case '5':
+                        return;
+                        break;
+                    default:
+                        Console.WriteLine("\nInvalid option!!");
+                        break;
+                }
+            }
         }
     }
 }
